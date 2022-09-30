@@ -275,12 +275,3 @@ clustered_data= 'clustered_data.xlsx'
 df.to_excel(clustered_data)
 
 
-print("Cluster centroids: \n")
-order_centroids = model.cluster_centers_.argsort()[:, ::-1]
-terms = vectorizer.get_feature_names()
-
-for i in range(k):
-    print("Cluster %d:" % i)
-    for j in order_centroids[i, :10]: #print out 10 feature terms of each cluster
-        print (' %s' % terms[j])
-    print('------------')
